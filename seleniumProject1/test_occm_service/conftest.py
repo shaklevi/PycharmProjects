@@ -11,5 +11,4 @@ def setup(request):
     driver.maximize_window()
     request.cls.driver = driver
     yield
-    sleep(20)
     driver.close()
