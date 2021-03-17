@@ -23,12 +23,12 @@ class TestClass:
         login_button.click()
         sleep(5)
         occm_header = self.driver.find_element_by_css_selector(".MainHeader_main-link__3Kle5")
-        assert(occm_header.text == "Cloud Manager")
+        assert occm_header.text == "Cloud Manager"
 
 
     @pytest.mark.parametrize("service_name,expected_url",
                              [("Cloud Volumes Service","https://cloud.netapp.com/cloud-volumes-service-for-aws"),
-                              ("Cloud Insights","https://cloud.netapp.com/cloud-volumes-service-for-aws"),
+                              ("Cloud Insights","https://gateway.main-ci.cloudinsights-qa.netapp.com/"),
                               ("Cloud Sync","https://staging.cloudmanager.netapp.com/sync"),
                               ("SaaS Backup","https://saasbackup.netapp.com/login"),
                               ("Cloud Tiering","https://staging.cloudmanager.netapp.com/tiering"),
@@ -43,7 +43,7 @@ class TestClass:
             if service_item.text == service_name:
                 service_item.click()
                 sleep(7)
-                assert (self.driver.current_url, expected_url)
+                assert expected_url in self.driver.current_url
                 self.driver.get("https://staging.cloudmanager.netapp.com/working-environments?view=clouds")
                 sleep(10)
                 break
