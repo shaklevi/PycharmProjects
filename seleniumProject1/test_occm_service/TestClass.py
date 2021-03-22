@@ -2,24 +2,19 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import sys
 import pytest
 from time import sleep
-import sys
-
-
-
-
-
 
 @pytest.mark.usefixtures("setup")
 class TestClass:
-    def test_login(self):
+    def test_login(self, username, password):
         self.driver.get('https://staging.cloudmanager.netapp.com/#!/')
         sleep(7)
         login_input_element = self.driver.find_element_by_css_selector("[type=email]")
-        login_input_element.send_keys(sys.argv[1])
+        login_input_element.send_keys(username)
         password_input_element = self.driver.find_element_by_css_selector("[type=password]")
-        password_input_element.send_keys(sys.argv[2])
+        password_input_element.send_keys(password)
         login_button = self.driver.find_element_by_css_selector("[type=submit]")
         login_button.click()
         sleep(5)
