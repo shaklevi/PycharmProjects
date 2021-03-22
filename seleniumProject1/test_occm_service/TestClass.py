@@ -4,6 +4,7 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import pytest
 from time import sleep
+import sys
 
 
 
@@ -16,9 +17,9 @@ class TestClass:
         self.driver.get('https://staging.cloudmanager.netapp.com/#!/')
         sleep(7)
         login_input_element = self.driver.find_element_by_css_selector("[type=email]")
-        login_input_element.send_keys("Shahar.levi@netapp.com")
+        login_input_element.send_keys(sys.argv[2])
         password_input_element = self.driver.find_element_by_css_selector("[type=password]")
-        password_input_element.send_keys("Netapp234")
+        password_input_element.send_keys(sys.argv[3])
         login_button = self.driver.find_element_by_css_selector("[type=submit]")
         login_button.click()
         sleep(5)
