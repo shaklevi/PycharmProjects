@@ -9,6 +9,7 @@ from time import sleep
 @pytest.mark.usefixtures("setup")
 class TestClass:
     def test_login(self, username, password):
+#         Send this url as parameter
         self.driver.get('https://staging.cloudmanager.netapp.com/#!/')
         sleep(7)
         login_input_element = self.driver.find_element_by_css_selector("[type=email]")
