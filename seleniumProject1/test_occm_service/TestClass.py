@@ -8,6 +8,7 @@ from time import sleep
 
 @pytest.mark.usefixtures("setup")
 class TestClass:
+    """This  function tests a valid login to OCCM and varifies correct navigation to OCCM's main page"""
     def test_login(self, username, password):
 #         Send this url as parameter
         self.driver.get('https://staging.cloudmanager.netapp.com/#!/')
@@ -30,6 +31,8 @@ class TestClass:
                               ("SaaS Backup","https://saasbackup.netapp.com/login"),
                               ("Cloud Tiering","https://staging.cloudmanager.netapp.com/tiering"),
                               ("Cloud Backup Service","https://cloud-netapp-com.sandbox.hs-sites.com/cloud-backup-service")])
+
+    """This function tests navigation to each of the available services that appear on the left side bar. """
     def test_switch_to_service(self, service_name, expected_url):
         iframe = self.driver.find_element_by_css_selector("#portal-widget-frame-container>iframe")
         self.driver.switch_to.frame(iframe)
