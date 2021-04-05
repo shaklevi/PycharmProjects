@@ -1,0 +1,20 @@
+occm_url: https://staging.cloudmanager.netapp.com/#!/
+services_urls:
+- !!python/tuple
+  - Cloud Volumes Service
+  - https://cloud.netapp.com/cloud-volumes-service-for-aws
+- !!python/tuple
+  - Cloud Insights
+  - https://gateway.main-ci.cloudinsights-qa.netapp.com/
+- !!python/tuple
+  - Cloud Sync
+  - https://staging.cloudmanager.netapp.com/sync
+- !!python/tuple
+  - SaaS Backup
+  - https://saasbackup.netapp.com/login
+- !!python/tuple
+  - Cloud Tiering
+  - https://staging.cloudmanager.netapp.com/tiering
+- !!python/tuple
+  - Cloud Backup Service
+  - https://cloud-netapp-com.sandbox.hs-sites.com/cloud-backup-service
