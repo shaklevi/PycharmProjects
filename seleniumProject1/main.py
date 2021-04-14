@@ -14,7 +14,8 @@ def write_config_file():
                        ("Cloud Sync", "https://staging.cloudmanager.netapp.com/sync"),
                        ("SaaS Backup", "https://saasbackup.netapp.com/login"),
                        ("Cloud Tiering", "https://staging.cloudmanager.netapp.com/tiering"),
-                       ("Cloud Backup Service", "https://cloud-netapp-com.sandbox.hs-sites.com/cloud-backup-service")]}
+                       ("Cloud Backup Service", "https://cloud-netapp-com.sandbox.hs-sites.com/cloud-backup-service")],
+                        'cloud_central_menu_items': ['Products', 'Solutions', 'Clouds', 'Partners', 'Resources', 'Blog']}
 
     with open(config_file_path, 'w') as file:
         documents = yaml.dump(config_data, file, default_flow_style=False)

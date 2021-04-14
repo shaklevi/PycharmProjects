@@ -1,3 +1,10 @@
+cloud_central_menu_items:
+- Products
+- Solutions
+- Clouds
+- Partners
+- Resources
+- Blog
 occm_url: https://staging.cloudmanager.netapp.com/#!/
 services_urls:
 - !!python/tuple
